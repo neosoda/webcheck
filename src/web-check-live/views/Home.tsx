@@ -220,40 +220,6 @@ const Home = (): JSX.Element => {
         { errorMsg && <ErrorMessage>{errorMsg}</ErrorMessage>}
         <Button type="submit" styles="width: calc(100% - 1rem);" size="large" onClick={submit}>Analyser !</Button>
       </UserInputMain>
-      <SponsorCard>
-        <Heading as="h2" size="small" color={colors.primary}>Sponsorisé par</Heading>
-        <div className="inner">
-          <p>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://terminaltrove.com/?utm_campaign=github&utm_medium=referral&utm_content=web-check&utm_source=wcgh"
-            >
-              Terminal Trove
-            </a> - Le $HOME de tout ce qui concerne le terminal.
-            <br />
-            <span className="cta">
-              Recevez les dernières nouveautés sur les outils CLI/TUI via
-              la <a
-                target="_blank"
-                rel="noreferrer"
-                className="cta"
-                href="https://terminaltrove.com/newsletter?utm_campaign=github&utm_medium=referral&utm_content=web-check&utm_source=wcgh"
-                >
-                newsletter Terminal Trove
-              </a>
-            </span>
-            
-          </p>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://terminaltrove.com/?utm_campaign=github&utm_medium=referral&utm_content=web-check&utm_source=wcgh">
-            <img width="120" alt="Terminal Trove" src="https://i.ibb.co/NKtYjJ1/terminal-trove-web-check.png" />
-          </a>
-        </div>
-
-      </SponsorCard>
       <SiteFeaturesWrapper>
         <div className="features">
           <Heading as="h2" size="small" color={colors.primary}>Vérifications supportées</Heading>

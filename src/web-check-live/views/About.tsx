@@ -150,26 +150,6 @@ const About = (): JSX.Element => {
           <p key={index}>{para}</p>
         ))}
         <hr />
-        <SponsorshipContainer>
-          <p>
-            Web-Check est généreusement sponsorisé
-            par <a target="_blank" rel="noreferrer" href="https://terminaltrove.com/?utm_campaign=github&utm_medium=referral&utm_content=web-check&utm_source=wcgh">
-              Terminal Trove
-            </a>
-            <br />
-            Le $HOME de tout ce qui touche au terminal.
-            <br />
-            <small>
-              <a target="_blank" rel="noreferrer" href="https://terminaltrove.com/newsletter?utm_campaign=github&utm_medium=referral&utm_content=web-check&utm_source=wcgh">
-                Découvrez votre prochain outil CLI / TUI et recevez des mises à jour directement dans votre boîte de réception
-              </a>
-            </small>
-          </p>
-          <a target="_blank" rel="noreferrer" href="https://terminaltrove.com/?utm_campaign=github&utm_medium=referral&utm_content=web-check&utm_source=wcgh">
-            <img width="300" alt="Terminal Trove" src="https://i.ibb.co/T1KzVmR/terminal-trove-green.png" />
-          </a>
-        </SponsorshipContainer>
-        <hr />
         <p>
           Web-Check est développé et maintenu par <a target="_blank" rel="noreferrer" href="https://aliciasykes.com">Alicia Sykes</a>.
           Il est sous licence <a target="_blank" rel="noreferrer" href="https://github.com/Lissy93/web-check/blob/master/LICENSE">MIT</a>,
