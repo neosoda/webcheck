@@ -272,7 +272,13 @@ const AdditionalResources = (props: { url?: string }): JSX.Element => {
                   {new URL(resource.link).hostname}
                 </span>
                 <div className="resource-lower">
-                  <img src={resource.icon} alt="" />
+                  <img
+                    src={`https://www.google.com/s2/favicons?domain=${new URL(resource.link).hostname}&sz=64`}
+                    alt=""
+                    onError={(e) => {
+                      (e.target as HTMLElement).style.display = 'none';
+                    }}
+                  />
                   <div className="resource-details">
                     <p className="resource-description">{resource.description}</p>
                   </div>
