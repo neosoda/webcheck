@@ -507,7 +507,7 @@ const Results = (props: { address?: string } ): JSX.Element => {
     jobId: 'whois',
     updateLoadingJobs,
     addressInfo: { address, addressType, expectedAddressTypes: urlTypeOnly },
-    fetchRequest: () => fetch(`https://api.whoapi.com/?domain=${address}&r=whois&apikey=${keys.whoApi}`)
+    fetchRequest: () => fetch(`https://api.whoapi.com/?domain=${makeSiteName(address)}&r=whois&apikey=${keys.whoApi}`)
       .then(res => parseJson(res))
       .then(res => applyWhoIsResults(res)),
   });

@@ -7,13 +7,15 @@ import express from 'express';
 import rateLimit from 'express-rate-limit';
 import historyApiFallback from 'connect-history-api-fallback';
 
+import { fileURLToPath, pathToFileURL } from 'url';
+
 // Load environment variables from .env file
 dotenv.config();
 
 // Create the Express app
 const app = express();
 
-const __filename = new URL(import.meta.url).pathname;
+const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const port = process.env.PORT || 3000; // The port to run the server on
@@ -63,9 +65,9 @@ fs.readdirSync(dirPath, { withFileTypes: true })
   .forEach(async dirent => {
     const routeName = dirent.name.split('.')[0];
     const route = `${API_DIR}/${routeName}`;
-    // const handler = require(path.join(dirPath, dirent.name));
-
-    const handlerModule = await import(path.join(dirPath, dirent.name));
+    
+    const filePath = path.join(dirPath, dirent.name);
+    const handlerModule = await import(pathToFileURL(filePath).href);
     const handler = handlerModule.default || handlerModule;
     handlers[route] = handler;
 
