@@ -6,15 +6,21 @@ import Heading from 'web-check-live/components/Form/Heading';
 import colors from 'web-check-live/styles/colors';
 
 export const StyledCard = styled.section<{ styles?: string}>`
-  background: ${colors.backgroundLighter};
+  background: rgba(17, 24, 39, 0.75);
   color: ${colors.textColor};
-  box-shadow: 4px 4px 0px ${colors.bgShadowColor};
-  border-radius: 8px;
-  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 1.25rem;
   position: relative;
-  margin 0.5rem;
+  margin: 0.5rem;
   max-height: 64rem;
   overflow: auto;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  &:hover {
+    border-color: rgba(59, 130, 246, 0.25);
+  }
   ${props => props.styles}
 `;
 

@@ -516,22 +516,22 @@ const docs: Doc[] = [
 ];
 
 export const featureIntro = [
-  'When conducting an OSINT investigation on a given website or host, there are several key areas to look at. Each of these are documented below, along with links to the tools and techniques you can use to gather the relevant information.',
-  'Web-Check can automate the process of gathering this data, but it will be up to you to interpret the results and draw conclusions.',
+  'Lors de la conduite d\'une investigation OSINT sur un site web ou hôte donné, plusieurs domaines clés doivent être examinés. Chacun d\'eux est documenté ci-dessous avec des liens vers les outils et techniques permettant de rassembler les informations pertinentes.',
+  'Web-Check automatise la collecte de ces données, mais il vous appartiendra d\'interpréter les résultats et d\'en tirer les conclusions.',
 ];
 
 export const about = [
-`Web-Check is a powerful all-in-one tool for discovering information about a website/host.
-The core philosophy is simple: feed Web-Check a URL and let it gather, collate, and present a broad array of open data for you to delve into.`,
+`Web-Check est un outil tout-en-un puissant pour découvrir des informations sur un site web / hôte.
+La philosophie fondamentale est simple : renseignez une URL dans Web-Check et laissez-le collecter, regrouper et présenter un large éventail de données ouvertes à explorer.`,
 
-`The report shines a spotlight onto potential attack vectors, existing security measures,
-and the web of connections within a site's architecture.
-The results can also help optimizing server responses, configuring redirects,
-managing cookies, or fine-tuning DNS records for your site.`,
+`Le rapport met en lumière les vecteurs d'attaque potentiels, les mesures de sécurité existantes,
+ainsi que le réseau de connexions au sein de l'architecture d'un site.
+Les résultats peuvent également vous aider à optimiser les réponses du serveur, configurer les redirections,
+gérer les cookies ou affiner les enregistrements DNS de votre site.`,
 
-`So, whether you're a developer, system administrator, security researcher, penetration
-tester or are just interested in discovering the underlying technologies of a given site 
-- I'm sure you'll find this a useful addition to your toolbox.`,
+`Que vous soyez développeur, administrateur système, chercheur en sécurité, testeur d'intrusion
+ou simplement curieux de découvrir les technologies sous-jacentes d'un site donné 
+- vous trouverez sans aucun doute cet outil très utile dans votre boîte à outils.`,
 ];
 
 export const license = `The MIT License (MIT)
@@ -556,18 +556,18 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 `;
 
 export const supportUs = [
-  "Web-Check is free to use without restriction.",
-  "All the code is open source, so you're also free to deploy your own instance, as well as fork, modify and distribute the code in both private and commercial settings.",
-  "Running web-check does cost me a small amount of money each month, so if you're finding the app useful, consider <a href='https://github.com/sponsors/Lissy93'>sponsoring me on GitHub</a> if you're able to. Even just $1 or $2/month would be a huge help in supporting the ongoing project running costs.",
-  "Otherwise, there are other ways you can help out, like submitting or reviewing a pull request to the <a href='https://github.com/Lissy93/web-check'>GitHub repo</a>, upvoting us on <a href='https://www.producthunt.com/posts/web-check'>Product Hunt</a>, or by sharing with your network.",
-  "But don't feel obliged to do anything, as this app (and all my other projects) will always remain 100% free and open source, and I will do my best to ensure the managed instances remain up and available for as long as possible :)",
+  "Web-Check est gratuit et utilisable sans restriction.",
+  "Tout le code est open source, vous êtes donc libre de déployer votre propre instance, ainsi que de forker, modifier et distribuer le code à des fins privées ou commerciales.",
+  "L'exécution de Web-Check entraîne de légers coûts mensuels. Si vous trouvez cette application utile, pensez à <a href='https://github.com/sponsors/Lissy93'>me sponsoriser sur GitHub</a> si vous le pouvez. Même 1 ou 2 $/mois aideraient énormément à couvrir les frais d'hébergement.",
+  "Sinon, d'autres moyens d'aider existent, comme soumettre ou relire une pull request sur le <a href='https://github.com/Lissy93/web-check'>dépôt GitHub</a>, voter pour nous sur <a href='https://www.producthunt.com/posts/web-check'>Product Hunt</a>, ou partager avec votre réseau.",
+  "Mais ne vous sentez pas obligé : cette application (comme tous mes autres projets) restera toujours 100% gratuite et open source, et je ferai de mon mieux pour maintenir les instances disponibles aussi longtemps que possible :)",
 ];
 
 export const fairUse = [
-  'Please use this tool responsibly. Do not use it for hosts you do not have permission to scan. Do not use it as part of a scheme to attack or disrupt services.',
-  'Requests may be rate-limited to prevent abuse. If you need to make more bandwidth, please deploy your own instance.',
-  'There is no guarantee of uptime or availability. If you need to make sure the service is available, please deploy your own instance.',
-  'Please use fairly, as excessive use will quickly deplete the lambda function credits, making the service unavailable for others (and/or empty my bank account!).',
+  'Veuillez utiliser cet outil de manière responsable. Ne l\'utilisez pas sur des hôtes que vous n\'avez pas la permission de scanner. Ne l\'utilisez pas dans le cadre d\'un plan d\'attaque ou de perturbation de services.',
+  'Les requêtes peuvent être limitées (rate-limiting) pour éviter les abus. Si vous avez besoin de plus de bande passante, veuillez déployer votre propre instance.',
+  'Il n\'y a aucune garantie de disponibilité. Si vous devez vous assurer que le service reste disponible, veuillez déployer votre propre instance.',
+  'Veuillez faire un usage équitable de l\'outil, car une utilisation excessive épuise rapidement les crédits, ce qui rend le service indisponible pour les autres.',
 ];
 
 export default docs;

@@ -27,23 +27,25 @@ const HomeContainer = styled.section`
 `;
 
 const UserInputMain = styled.form`
-  background: ${colors.backgroundLighter};
-  box-shadow: 4px 4px 0px ${colors.bgShadowColor};
-  border-radius: 8px;
-  padding: 1rem;
-  z-index: 5;
-  margin: 1rem;
+  background: rgba(17, 24, 39, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 1rem;
   width: calc(100% - 2rem);
   max-width: 60rem;
   z-index: 2;
 `;
 
 const SponsorCard = styled.div`
-  background: ${colors.backgroundLighter};
-  box-shadow: 4px 4px 0px ${colors.bgShadowColor};
-  border-radius: 8px;
-  padding: 1rem;
-  z-index: 5;
+  background: rgba(17, 24, 39, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 1.25rem;
   margin: 1rem;
   width: calc(100% - 2rem);
   max-width: 60rem;
@@ -55,28 +57,26 @@ const SponsorCard = styled.div`
     gap: 1rem;
     p {
       margin: 0.25rem 0;
+      color: ${colors.textColorSecondary};
     }
   }
   a {
     color: ${colors.textColor};
   }
   img {
-    border-radius: 0.25rem;
-    box-shadow: 2px 2px 0px ${colors.fgShadowColor};
-    transition: box-shadow 0.2s;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
     margin: 0 auto;
     display: block;
     width: 200px;
     &:hover {
-      box-shadow: 4px 4px 0px ${colors.fgShadowColor};
-    }
-    &:active {
-      box-shadow: -2px -2px 0px ${colors.fgShadowColor};
+      transform: scale(1.02);
     }
   }
   .cta {
-    font-size: 0.78rem;
-    a { color: ${colors.primary}; }
+    font-size: 0.85rem;
+    a { color: ${colors.primaryLighter}; }
   }
 `;
 
@@ -138,7 +138,7 @@ const SiteFeaturesWrapper = styled(StyledCard)`
 `;
 
 const Home = (): JSX.Element => {
-  const defaultPlaceholder = 'e.g. https://duck.com/';
+  const defaultPlaceholder = 'ex. https://duck.com/';
   const [userInput, setUserInput] = useState('');
   const [errorMsg, setErrMsg] = useState('');
   const [placeholder] = useState(defaultPlaceholder);
@@ -162,9 +162,9 @@ const Home = (): JSX.Element => {
     const addressType = determineAddressType(address);
   
     if (addressType === 'empt') {
-      setErrMsg('Field must not be empty');
+      setErrMsg('Le champ ne doit pas être vide');
     } else if (addressType === 'err') {
-      setErrMsg('Must be a valid URL, IPv4 or IPv6 Address');
+      setErrMsg('Doit être une URL valide ou une adresse IPv4/IPv6');
     } else {
       // if the addressType is 'url' and address doesn't start with 'http://' or 'https://', prepend 'https://'
       if (addressType === 'url' && !/^https?:\/\//i.test(address)) {
@@ -195,38 +195,20 @@ const Home = (): JSX.Element => {
     submit();
   }
 
-  // const findIpAddress = () => {
-  //   setUserInput('');
-  //   setPlaceholder('Looking up your IP...');
-  //   setInputDisabled(true);
-  //   fetch('https://ipapi.co/json/')
-  //     .then(function(response) {
-  //       response.json().then(jsonData => {
-  //         setUserInput(jsonData.ip);
-  //         setPlaceholder(defaultPlaceholder);
-  //         setInputDisabled(true);
-  //       });
-  //     })
-  //     .catch(function(error) {
-  //       console.log('Failed to get IP address :\'(', error)
-  //     });
-  // };
-
-
   return (
     <HomeContainer>
       <FancyBackground />
       <UserInputMain onSubmit={formSubmitEvent}>
         <a href="/">
           <Heading as="h1" size="xLarge" align="center" color={colors.primary}>
-            <img width="64" src="/web-check.png" alt="Web Check Icon" />
+            <img width="64" src="/web-check.png" alt="Icone Web Check" />
             Web Check
           </Heading>
         </a>
         <Input
           id="user-input"
           value={userInput}
-          label="Enter a URL"
+          label="Entrez une URL"
           size="large"
           orientation="vertical"
           name="url"
@@ -235,12 +217,11 @@ const Home = (): JSX.Element => {
           handleChange={inputChange}
           handleKeyDown={handleKeyPress}
         />
-        {/* <FindIpButton onClick={findIpAddress}>Or, find my IP</FindIpButton> */}
         { errorMsg && <ErrorMessage>{errorMsg}</ErrorMessage>}
-        <Button type="submit" styles="width: calc(100% - 1rem);" size="large" onClick={submit}>Analyze!</Button>
+        <Button type="submit" styles="width: calc(100% - 1rem);" size="large" onClick={submit}>Analyser !</Button>
       </UserInputMain>
       <SponsorCard>
-        <Heading as="h2" size="small" color={colors.primary}>Sponsored by</Heading>
+        <Heading as="h2" size="small" color={colors.primary}>Sponsorisé par</Heading>
         <div className="inner">
           <p>
             <a
@@ -249,17 +230,17 @@ const Home = (): JSX.Element => {
               href="https://terminaltrove.com/?utm_campaign=github&utm_medium=referral&utm_content=web-check&utm_source=wcgh"
             >
               Terminal Trove
-            </a> - The $HOME of all things in the terminal.
+            </a> - Le $HOME de tout ce qui concerne le terminal.
             <br />
             <span className="cta">
-              Get updates on the latest CLI/TUI tools via
-              the <a
+              Recevez les dernières nouveautés sur les outils CLI/TUI via
+              la <a
                 target="_blank"
                 rel="noreferrer"
                 className="cta"
                 href="https://terminaltrove.com/newsletter?utm_campaign=github&utm_medium=referral&utm_content=web-check&utm_source=wcgh"
                 >
-                Terminal Trove newsletter
+                newsletter Terminal Trove
               </a>
             </span>
             
@@ -275,21 +256,21 @@ const Home = (): JSX.Element => {
       </SponsorCard>
       <SiteFeaturesWrapper>
         <div className="features">
-          <Heading as="h2" size="small" color={colors.primary}>Supported Checks</Heading>
+          <Heading as="h2" size="small" color={colors.primary}>Vérifications supportées</Heading>
           <ul>
             {docs.map((doc, index) => (<li key={index}>{doc.title}</li>))}
-            <li><Link to="/check/about">+ more!</Link></li>
+            <li><Link to="/check/about">+ encore plus !</Link></li>
           </ul>
         </div>
         <div className="links">
-          <a target="_blank" rel="noreferrer" href="https://github.com/lissy93/web-check" title="Check out the source code and documentation on GitHub, and get support or contribute">
-            <Button>View on GitHub</Button>
+          <a target="_blank" rel="noreferrer" href="https://github.com/lissy93/web-check" title="Découvrez le code source et la documentation sur GitHub, et contribuez">
+            <Button>Voir sur GitHub</Button>
           </a>
-          <a target="_blank" rel="noreferrer" href="https://app.netlify.com/start/deploy?repository=https://github.com/lissy93/web-check" title="Deploy your own private or public instance of Web-Check to Netlify">
-            <Button>Deploy your own</Button>
+          <a target="_blank" rel="noreferrer" href="https://app.netlify.com/start/deploy?repository=https://github.com/lissy93/web-check" title="Déployez votre propre instance privée ou publique de Web-Check sur Netlify">
+            <Button>Déployer la vôtre</Button>
           </a>
-          <Link to="/check/about#api-documentation" title="View the API documentation, to use Web-Check programmatically">
-            <Button>API Docs</Button>
+          <Link to="/check/about#api-documentation" title="Consultez la documentation de l'API pour utiliser Web-Check de manière programmatique">
+            <Button>Docs API</Button>
           </Link>
         </div>
       </SiteFeaturesWrapper>

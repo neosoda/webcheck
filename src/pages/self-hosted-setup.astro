@@ -6,13 +6,13 @@ import Icon from '@components/molecules/Icon.svelte';
 
 const cardData = [
   {
-    title: 'Deploy with Docker',
-    description: 'Just one command, and you\'ll have your own Web Check instance running on your server in minutes.',
+    title: 'Déployer avec Docker',
+    description: 'Une seule commande suffit pour avoir votre propre instance Web Check fonctionnelle sur votre serveur en quelques minutes.',
     command: 'docker run -p 3000:3000 lissy93/web-check',
   },
   {
-    title: '1-Click Deploy',
-    description: 'Don\'t have a server? Not a problem! Deploy Web Check with one click on Vercel or Netlify.',
+    title: 'Déploiement en 1 Clic',
+    description: 'Vous n\'avez pas de serveur ? Aucun problème ! Déployez Web Check en un clic sur Vercel ou Netlify.',
     buttons: [
       {
         name: 'Vercel',
@@ -32,8 +32,8 @@ const cardData = [
     ]
   },
   {
-    title: 'Build from Source',
-    description: 'Want to customize Web Check? Clone the repository and deploy it on your server.',
+    title: 'Compiler depuis les sources',
+    description: 'Vous souhaitez personnaliser Web Check ? Clonez le dépôt et déployez-le sur votre serveur.',
     buttons: [
       {
         name: 'GitHub',
@@ -47,22 +47,22 @@ const cardData = [
 ---
 
 <BaseLayout
-  title="Self-Hosted Setup | Web Check"
-  description="Get started with running Web Check locally or on your own server."
+  title="Configuration Auto-Hébergée | Web Check"
+  description="Commencez à exécuter Web Check localement ou sur votre propre serveur."
 >
   <div class="web-check-page">
     <NavBar />
     <main>
-      <h1>Self-Hosted Setup</h1>
+      <h1>Configuration Auto-Hébergée</h1>
       <p>
-        Get your own free instance of Web Check, running locally or on your server.
+        Obtenez votre propre instance gratuite de Web Check, s'exécutant localement ou sur votre serveur.
       </p>
     
       <div class="option-cards">
 
         { cardData.map((card, cardIndex) => (
           <div class="card">
-            <span class="option">Option #{cardIndex + 1}</span>
+            <span class="option">Option n°{cardIndex + 1}</span>
             <h3>{card.title}</h3>
             <p>{card.description}</p>
             { card.buttons && (

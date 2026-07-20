@@ -140,11 +140,11 @@ const About = (): JSX.Element => {
     <AboutContainer>
       <Nav>
         <HeaderLinkContainer>
-          <a target="_blank" rel="noreferrer" href="https://github.com/lissy93/web-check"><Button>View on GitHub</Button></a>
+          <a target="_blank" rel="noreferrer" href="https://github.com/lissy93/web-check"><Button>Voir sur GitHub</Button></a>
         </HeaderLinkContainer>
       </Nav>
 
-      <Heading as="h2" size="medium" color={colors.primary}>Intro</Heading>
+      <Heading as="h2" size="medium" color={colors.primary}>Introduction</Heading>
       <Section>
         {about.map((para, index: number) => (
           <p key={index}>{para}</p>
@@ -152,16 +152,16 @@ const About = (): JSX.Element => {
         <hr />
         <SponsorshipContainer>
           <p>
-            Web-Check is kindly sponsored
-            by <a target="_blank" rel="noreferrer" href="https://terminaltrove.com/?utm_campaign=github&utm_medium=referral&utm_content=web-check&utm_source=wcgh">
+            Web-Check est généreusement sponsorisé
+            par <a target="_blank" rel="noreferrer" href="https://terminaltrove.com/?utm_campaign=github&utm_medium=referral&utm_content=web-check&utm_source=wcgh">
               Terminal Trove
             </a>
             <br />
-            The $HOME of all things in the terminal.
+            Le $HOME de tout ce qui touche au terminal.
             <br />
             <small>
               <a target="_blank" rel="noreferrer" href="https://terminaltrove.com/newsletter?utm_campaign=github&utm_medium=referral&utm_content=web-check&utm_source=wcgh">
-                Find your next CLI / TUI tool, and get updates to your inbox
+                Découvrez votre prochain outil CLI / TUI et recevez des mises à jour directement dans votre boîte de réception
               </a>
             </small>
           </p>
@@ -171,20 +171,20 @@ const About = (): JSX.Element => {
         </SponsorshipContainer>
         <hr />
         <p>
-          Web-Check is developed and maintained by <a target="_blank" rel="noreferrer" href="https://aliciasykes.com">Alicia Sykes</a>.
-          It's licensed under the <a target="_blank" rel="noreferrer" href="https://github.com/Lissy93/web-check/blob/master/LICENSE">MIT license</a>,
-          and is completely free to use, modify and distribute in both personal and commercial settings.<br />
-          Source code and self-hosting docs are available on <a target="_blank" rel="noreferrer" href="https://github.com/lissy93/web-check">GitHub</a>.
-          If you've found this service useful, consider <a target="_blank" rel="noreferrer" href="https://github.com/sponsors/Lissy93">sponsoring me</a> from $1/month,
-          to help with the ongoing hosting and development costs.
+          Web-Check est développé et maintenu par <a target="_blank" rel="noreferrer" href="https://aliciasykes.com">Alicia Sykes</a>.
+          Il est sous licence <a target="_blank" rel="noreferrer" href="https://github.com/Lissy93/web-check/blob/master/LICENSE">MIT</a>,
+          et est totalement gratuit à utiliser, modifier et distribuer dans des cadres personnels et commerciaux.<br />
+          Le code source et la documentation d'auto-hébergement sont disponibles sur <a target="_blank" rel="noreferrer" href="https://github.com/lissy93/web-check">GitHub</a>.
+          Si vous trouvez ce service utile, vous pouvez <a target="_blank" rel="noreferrer" href="https://github.com/sponsors/Lissy93">me soutenir</a> à partir de 1$/mois,
+          pour aider aux coûts d'hébergement et de développement continu.
         </p>
       </Section>
       
-      <Heading as="h2" size="medium" color={colors.primary}>Features</Heading>
+      <Heading as="h2" size="medium" color={colors.primary}>Fonctionnalités</Heading>
       <Section>
         {featureIntro.map((fi: string, i: number) => (<p key={i}>{fi}</p>))}
         <div className="contents">
-        <Heading as="h3" size="small" id="#feature-contents" color={colors.primary}>Contents</Heading>
+        <Heading as="h3" size="small" id="#feature-contents" color={colors.primary}>Sommaire</Heading>
           <ul>
             {docs.map((section, index: number) => (
               <li key={index}>
@@ -200,8 +200,8 @@ const About = (): JSX.Element => {
             <Heading as="h3" size="small" id={makeAnchor(section.title)} color={colors.primary}>{section.title}</Heading>
             {section.screenshot &&
               <figure className="example-screenshot">
-                <img className="screenshot" src={section.screenshot} alt={`Example Screenshot ${section.title}`} />
-                <figcaption>Fig.{sectionIndex + 1} - Example of {section.title}</figcaption>
+                <img className="screenshot" src={section.screenshot} alt={`Exemple de capture d'écran ${section.title}`} />
+                <figcaption>Fig.{sectionIndex + 1} - Exemple de {section.title}</figcaption>
               </figure> 
             }
             {section.description && <>
@@ -209,11 +209,11 @@ const About = (): JSX.Element => {
               <p>{section.description}</p>
             </>}
             { section.use && <>
-              <Heading as="h4" size="small">Use Cases</Heading>
+              <Heading as="h4" size="small">Cas d'utilisation</Heading>
               <p>{section.use}</p>
             </>}
             {section.resources && section.resources.length > 0 && <>
-              <Heading as="h4" size="small">Useful Links</Heading>
+              <Heading as="h4" size="small">Liens utiles</Heading>
               <ul>
                 {section.resources.map((link: string | { title: string, link: string }, linkIndx: number) => (
                   typeof link === 'string' ? (
@@ -228,108 +228,107 @@ const About = (): JSX.Element => {
         ))}
       </Section>
 
-      <Heading as="h2" size="medium" color={colors.primary}>Deploy your own Instance</Heading>
+      <Heading as="h2" size="medium" color={colors.primary}>Déployer votre propre instance</Heading>
       <Section>
-        <p>Web-Check is designed to be easily self-hosted.</p>
-        <Heading as="h3" size="small" color={colors.primary}>Option #1 - Netlify</Heading>
-        <p>Click the button below to deploy to Netlify</p>
+        <p>Web-Check est conçu pour être facilement auto-hébergé.</p>
+        <Heading as="h3" size="small" color={colors.primary}>Option n°1 - Netlify</Heading>
+        <p>Cliquez sur le bouton ci-dessous pour déployer sur Netlify</p>
         <a target="_blank" rel="noreferrer" href="https://app.netlify.com/start/deploy?repository=https://github.com/lissy93/web-check">
-          <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />
+          <img src="https://www.netlify.com/img/deploy/button.svg" alt="Déployer sur Netlify" />
         </a>
 
-        <Heading as="h3" size="small" color={colors.primary}>Option #2 - Vercel</Heading>
-        <p>Click the button below to deploy to Vercel</p>
+        <Heading as="h3" size="small" color={colors.primary}>Option n°2 - Vercel</Heading>
+        <p>Cliquez sur le bouton ci-dessous pour déployer sur Vercel</p>
         <a target="_blank" rel="noreferrer" href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flissy93%2Fweb-check&project-name=web-check&repository-name=web-check-fork&demo-title=Web-Check%20Demo&demo-description=Check%20out%20web-check.xyz%20to%20see%20a%20live%20demo%20of%20this%20application%20running.&demo-url=https%3A%2F%2Fweb-check.xyz&demo-image=https%3A%2F%2Fraw.githubusercontent.com%2FLissy93%2Fweb-check%2Fmaster%2F.github%2Fscreenshots%2Fweb-check-screenshot10.png">
-          <img src="https://vercel.com/button" alt="Deploy with Vercel" />
+          <img src="https://vercel.com/button" alt="Déployer sur Vercel" />
         </a>
 
-        <Heading as="h3" size="small" color={colors.primary}>Option #3 - Docker</Heading>
+        <Heading as="h3" size="small" color={colors.primary}>Option n°3 - Docker</Heading>
         <p>
-        A Docker container is published to <a target="_blank" rel="noreferrer" href="https://hub.docker.com/r/lissy93/web-check">DockerHub</a>
+        Un conteneur Docker est publié sur <a target="_blank" rel="noreferrer" href="https://hub.docker.com/r/lissy93/web-check">DockerHub</a>
         <br />
-        Run this command, then open <code>localhost:3000</code>
+        Exécutez cette commande, puis ouvrez <code>localhost:3000</code>
         <pre>docker run -p 3000:3000 lissy93/web-check</pre>
         </p>
 
-        <Heading as="h3" size="small" color={colors.primary}>Option #4 - Manual</Heading>
+        <Heading as="h3" size="small" color={colors.primary}>Option n°4 - Manuel</Heading>
         <pre>
         git clone https://github.com/Lissy93/web-check.git<br />
-        cd web-check # Move into the project directory<br />
-        yarn install # Install dependencies<br />
-        yarn build # Build the app for production<br />
-        yarn serve # Start the app (API and GUI)<br />
+        cd web-check # Accéder au dossier du projet<br />
+        yarn install # Installer les dépendances<br />
+        yarn build # Compiler l'application pour la production<br />
+        yarn serve # Démarrer l'application (API et GUI)<br />
         </pre>
 
-        <Heading as="h3" size="small" color={colors.primary}>Further Docs</Heading>
+        <Heading as="h3" size="small" color={colors.primary}>Documentation complémentaire</Heading>
         <p>
-          More detailed installation and setup instructions can be found in the
-          GitHub repository - <a target="_blank" rel="noreferrer" href="https://github.com/lissy93/web-check#readme">github.com/lissy93/web-check</a>
+          Des instructions d'installation et de configuration plus détaillées sont disponibles dans le dépôt GitHub - <a target="_blank" rel="noreferrer" href="https://github.com/lissy93/web-check#readme">github.com/lissy93/web-check</a>
         </p>
 
-        <Heading as="h3" size="small" color={colors.primary}>Configuring</Heading>
+        <Heading as="h3" size="small" color={colors.primary}>Configuration</Heading>
         <p>
-          There are some optional environmental variables you can specify to give you access to some additional Web-Checks.
-          See the README for full list of options.
+          Certaines variables d'environnement optionnelles peuvent être spécifiées pour débloquer des vérifications Web supplémentaires.
+          Consultez le fichier README pour la liste complète.
         </p>
 
         <ul>
           <li>
             <code>GOOGLE_CLOUD_API_KEY</code>
-            : <a target="_blank" rel="noreferrer" href="https://cloud.google.com/api-gateway/docs/authenticate-api-keys">A Google API key</a>
-            <i> Used to return quality metrics for a site</i>
+            : <a target="_blank" rel="noreferrer" href="https://cloud.google.com/api-gateway/docs/authenticate-api-keys">Une clé d'API Google</a>
+            <i> Utilisée pour obtenir les métriques de qualité d'un site</i>
           </li>
           <li>
             <code>REACT_APP_SHODAN_API_KEY</code>
-            : <a target="_blank" rel="noreferrer" href="https://account.shodan.io/">A Shodan API key</a>
-            <i> To show associated hosts for a domain</i>
+            : <a target="_blank" rel="noreferrer" href="https://account.shodan.io/">Une clé d'API Shodan</a>
+            <i> Pour afficher les hôtes associés à un domaine</i>
           </li>
           <li>
             <code>REACT_APP_WHO_API_KEY</code>
-            : <a target="_blank" rel="noreferrer" href="https://whoapi.com/">A WhoAPI key</a>
-            <i> Allows for more comprehensive WhoIs records</i>
+            : <a target="_blank" rel="noreferrer" href="https://whoapi.com/">Une clé WhoAPI</a>
+            <i> Permet d'obtenir des enregistrements WhoIs plus complets</i>
           </li>
         </ul>
 
       </Section>
 
-      <Heading as="h2" size="medium" color={colors.primary}>API Documentation</Heading>
+      <Heading as="h2" size="medium" color={colors.primary}>Documentation de l'API</Heading>
       <Section>
         {/* eslint-disable-next-line*/}
-        <p>// Coming soon...</p>
+        <p>// Bientôt disponible...</p>
       </Section>
 
-      <Heading as="h2" size="medium" color={colors.primary}>Additional Resources</Heading>
+      <Heading as="h2" size="medium" color={colors.primary}>Ressources Supplémentaires</Heading>
       <AdditionalResources />
 
-      <Heading as="h2" size="medium" color={colors.primary}>Support Us</Heading>
+      <Heading as="h2" size="medium" color={colors.primary}>Nous Soutenir</Heading>
       <Section>
         {supportUs.map((para, index: number) => (<p dangerouslySetInnerHTML={{__html: para}} />))}
       </Section>
 
-      <Heading as="h2" size="medium" color={colors.primary}>Terms & Info</Heading>
+      <Heading as="h2" size="medium" color={colors.primary}>Conditions & Infos</Heading>
       <Section>
-      <Heading as="h3" size="small" color={colors.primary}>License</Heading>
+      <Heading as="h3" size="small" color={colors.primary}>Licence</Heading>
         <b>
-          <a target="_blank" rel="noreferrer" href="https://github.com/lissy93/web-check">Web-Check</a> is distributed under the MIT license,
+          <a target="_blank" rel="noreferrer" href="https://github.com/lissy93/web-check">Web-Check</a> est distribué sous licence MIT,
           © <a target="_blank" rel="noreferrer" href="https://aliciasykes.com">Alicia Sykes</a> { new Date().getFullYear()}
         </b>
         <br />
-        <small>For more info, see <a target="_blank" rel="noreferrer" href="https://tldrlegal.com/license/mit-license">TLDR Legal → MIT</a></small>
+        <small>Pour plus d'informations, voir <a target="_blank" rel="noreferrer" href="https://tldrlegal.com/license/mit-license">TLDR Legal → MIT</a></small>
         <pre>{license}</pre>
         <hr />
-        <Heading as="h3" size="small" color={colors.primary}>Fair Use</Heading>
+        <Heading as="h3" size="small" color={colors.primary}>Usage Équitable (Fair Use)</Heading>
         <ul>
           {fairUse.map((para, index: number) => (<li>{para}</li>))}
         </ul>
         <hr />
-        <Heading as="h3" size="small" color={colors.primary}>Privacy</Heading>
+        <Heading as="h3" size="small" color={colors.primary}>Confidentialité</Heading>
         <p>
-        Analytics are used on the demo instance (via a self-hosted Plausible instance), this only records the URL you visited but no personal data.
-        There's also some basic error logging (via a self-hosted GlitchTip instance), this is only used to help me fix bugs.
+        Des statistiques anonymes sont utilisées sur l'instance de démo (via une instance Plausible auto-hébergée). Cela enregistre uniquement l'URL visitée, sans aucune donnée personnelle.
+        Un journal d'erreurs de base est également présent (via une instance GlitchTip auto-hébergée) dans le seul but de corriger les bugs.
         <br />
         <br />
-        Neither your IP address, browser/OS/hardware info, nor any other data will ever be collected or logged.
-        (You may verify this yourself, either by inspecting the source code or the using developer tools)
+        Ni votre adresse IP, ni les informations de votre navigateur/système/matériel, ni aucune autre donnée ne seront jamais collectées ou conservées.
+        (Vous pouvez le vérifier vous-même en inspectant le code source ou avec vos outils de développement)
         </p>
       </Section>
     </AboutContainer>

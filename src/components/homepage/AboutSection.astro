@@ -5,55 +5,55 @@ import Features from '@components/homepage/Features.astro';
 import SponsorSegment from '@components/homepage/SponsorSegment.astro';
 
 const supportedChecks = [
-  'Archive History',
-  'Block List Check',
-  'Carbon Footprint',
+  'Historique d\'archives',
+  'Vérification des listes noires',
+  'Empreinte carbone',
   'Cookies',
-  'DNS Server',
-  'DNS Records',
+  'Serveur DNS',
+  'Enregistrements DNS',
   'DNSSEC',
-  'Site Features',
-  'Firewall Types',
-  'Get IP Address',
-  'Headers',
+  'Fonctionnalités du site',
+  'Types de pare-feu',
+  'Obtenir l\'adresse IP',
+  'En-têtes HTTP',
   'HSTS',
-  'HTTP Security',
-  'Linked Pages',
-  'Mail Config',
-  'Open Ports',
-  'Quality Check',
-  'Global Rank',
-  'Redirects',
+  'Sécurité HTTP',
+  'Pages liées',
+  'Configuration e-mail',
+  'Ports ouverts',
+  'Contrôle de qualité',
+  'Rang mondial',
+  'Redirection',
   'Robots.txt',
-  'Screenshot',
+  'Capture d\'écran',
   'Security.txt',
-  'Sitemap',
-  'Social Tags',
-  'SSL Certificate',
-  'Uptime Status',
-  'Tech Stack',
-  'Known Threats',
-  'TLS Version',
+  'Plan du site (Sitemap)',
+  'Balises sociales',
+  'Certificat SSL',
+  'Statut de disponibilité',
+  'Technologies utilisées',
+  'Menaces connues',
+  'Version TLS',
   'Trace Route',
-  'TXT Records',
-  'Whois Lookup'
+  'Enregistrements TXT',
+  'Recherche Whois'
 ];
 
 const links = [
   {
-    title: 'View on GitHub',
+    title: 'Voir sur GitHub',
     url: 'https://github.com/lissy93/web-check',
     icon: 'github',
     isCta: true,
   },
   {
-    title: 'Deploy your Own',
+    title: 'Déployer la vôtre',
     url: '/self-hosted-setup',
     icon: 'rocket',
     isCta: false,
   },
   {
-    title: 'Use the API',
+    title: 'Utiliser l\'API',
     url: '/web-check-api',
     icon: 'code',
     isCta: false,
@@ -64,10 +64,10 @@ const links = [
 
 <div class="about-section">
   <div class="features-wrap">
-    <h4>Ready to get started?</h4>
+    <h4>Prêt à commencer ?</h4>
     <p class="what">
-      With over <span>30 supported checks</span>
-      you can view and analyse key website information in an instant
+      Avec plus de <span>30 vérifications supportées</span>
+      vous pouvez visualiser et analyser en un instant les informations clés d'un site web
     </p>
   </div>
   <hr />
@@ -79,35 +79,39 @@ const links = [
 
 <style lang="scss">
   .about-section {
-    width: 80vw;
-    margin: 0 auto;
+    width: 85vw;
+    max-width: 1200px;
+    margin: 4rem auto 2rem auto;
   }
   .features-wrap {
-    width: 80vw;
     max-width: 650px;
-    margin: 0 auto;
+    margin: 0 auto 2rem auto;
   }
   h4 {
-    text-transform: capitalize;
-    font-size: 1.8rem;
+    font-size: 2rem;
+    font-weight: 700;
     text-align: center;
-    background: linear-gradient(90deg, var(--text-color), var(--primary));
-    background-clip: text;
-    text-fill-color: transparent;
-    color: transparent;
+    color: #f8fafc;
+    letter-spacing: -0.02em;
   }
   .what {
     text-align: center;
-    font-size: 1.2rem;
-    line-height: 1.5;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--text-color-secondary);
+    margin-top: 0.5rem;
     span {
-      color: var(--primary);
-      font-style: italic;
+      color: #60a5fa;
+      font-weight: 600;
+      font-style: normal;
     }
   }
   hr {
-    width: 3rem;
+    width: 100%;
+    max-width: 200px;
+    height: 1px;
+    border: none;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
     margin: 3rem auto;
-    color: var(--primary);
   }
 </style>

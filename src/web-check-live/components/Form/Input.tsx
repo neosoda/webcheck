@@ -30,14 +30,17 @@ const InputContainer = styled.div<StyledInputTypes>`
 `;
 
 const StyledInput = styled.input<StyledInputTypes>`
-  background: ${colors.background};
+  background: rgba(17, 24, 39, 0.85);
   color: ${colors.textColor};
-  border: none;
-  border-radius: 0.25rem;
-  font-family: PTMono;
-  box-shadow: 3px 3px 0px ${colors.backgroundDarker};
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.5rem;
+  font-family: inherit;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
   &:focus {
-    outline: 1px solid ${colors.primary}
+    outline: none;
+    border-color: ${colors.primary};
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
   }
 
   ${props => applySize(props.inputSize)};
@@ -46,8 +49,9 @@ const StyledInput = styled.input<StyledInputTypes>`
 const StyledLabel = styled.label<StyledInputTypes>`
   color: ${colors.textColor};
   ${props => applySize(props.inputSize)};
-  padding: 0;
-  font-size: 1.6rem;
+  padding: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
 `;
 
 const Input = (inputProps: Props): JSX.Element => {

@@ -21,27 +21,32 @@ interface ButtonProps {
 
 const StyledButton = styled.button<ButtonProps>`
   cursor: pointer;
-  border: none;
-  border-radius: 0.25rem;
-  font-family: PTMono;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-weight: 600;
   box-sizing: border-box; 
-  width: -moz-available;
-  display: flex;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  gap: 1rem;
-  box-shadow: 3px 3px 0px ${colors.fgShadowColor};
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+  transition: all 0.2s ease-in-out;
   &:hover {
-    box-shadow: 5px 5px 0px ${colors.fgShadowColor};
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+    opacity: 0.95;
   }
   &:active {
-    box-shadow: -3px -3px 0px ${colors.fgShadowColor};
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
   }
   ${props => applySize(props.size)};
   ${(props) => props.bgColor ?
-    `background: ${props.bgColor};` : `background: ${colors.primary};`
+    `background: ${props.bgColor};` : `background: linear-gradient(135deg, ${colors.primary} 0%, #1d4ed8 100%);`
   }
   ${(props) => props.fgColor ?
-    `color: ${props.fgColor};` : `color: ${colors.background};`
+    `color: ${props.fgColor};` : `color: #ffffff;`
   }
   ${props => props.styles}
 `;

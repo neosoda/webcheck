@@ -848,8 +848,8 @@ const Results = (props: { address?: string } ): JSX.Element => {
 
   const makeActionButtons = (title: string, refresh: () => void, showInfo: (id: string) => void): ReactNode => {
     const actions = [
-      { label: `Info about ${title}`, onClick: showInfo, icon: 'ⓘ'},
-      { label: `Re-fetch ${title} data`, onClick: refresh, icon: '↻'},
+      { label: `Infos sur ${title}`, onClick: showInfo, icon: 'ⓘ'},
+      { label: `Actualiser les données de ${title}`, onClick: refresh, icon: '↻'},
     ];
     return (
       <ActionButtons actions={actions} />
@@ -881,8 +881,8 @@ const Results = (props: { address?: string } ): JSX.Element => {
       <Loader show={loadingJobs.filter((job: LoadingJob) => job.state !== 'loading').length < 5} />
       <FilterButtons>{ showFilters ? <>
         <div className="one-half">
-        <span className="group-label">Filter by</span>
-        {['server', 'client', 'meta'].map((tag: string) => (
+        <span className="group-label">Filtrer par</span>
+        {['serveur', 'client', 'méta'].map((tag: string) => (
           <button
             key={tag}
             className={tags.includes(tag) ? 'selected' : ''}
@@ -890,25 +890,25 @@ const Results = (props: { address?: string } ): JSX.Element => {
               {tag}
           </button>
         ))}
-        {(tags.length > 0 || searchTerm.length > 0) && <span onClick={clearFilters} className="clear">Clear Filters</span> }
+        {(tags.length > 0 || searchTerm.length > 0) && <span onClick={clearFilters} className="clear">Effacer les filtres</span> }
         </div>
         <div className="one-half">
-        <span className="group-label">Search</span>
+        <span className="group-label">Recherche</span>
         <input 
           type="text" 
-          placeholder="Filter Results" 
+          placeholder="Filtrer les résultats" 
           value={searchTerm} 
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <span className="toggle-filters" onClick={() => setShowFilters(false)}>Hide</span>
+        <span className="toggle-filters" onClick={() => setShowFilters(false)}>Masquer</span>
         </div>
         </> : (
           <div className="control-options">
-            <span className="toggle-filters" onClick={() => setShowFilters(true)}>Show Filters</span>
-            <a href="#view-download-raw-data"><span className="toggle-filters">Export Data</span></a>
-            <a href="/about"><span className="toggle-filters">Learn about the Results</span></a>
-            <a href="/about#additional-resources"><span className="toggle-filters">More tools</span></a>
-            <a target="_blank" rel="noreferrer" href="https://github.com/lissy93/web-check"><span className="toggle-filters">View GitHub</span></a>
+            <span className="toggle-filters" onClick={() => setShowFilters(true)}>Afficher les filtres</span>
+            <a href="#view-download-raw-data"><span className="toggle-filters">Exporter les données</span></a>
+            <a href="/about"><span className="toggle-filters">En savoir plus sur les résultats</span></a>
+            <a href="/about#additional-resources"><span className="toggle-filters">Autres outils</span></a>
+            <a target="_blank" rel="noreferrer" href="https://github.com/lissy93/web-check"><span className="toggle-filters">Voir GitHub</span></a>
           </div>
       ) }
       </FilterButtons>

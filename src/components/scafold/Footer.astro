@@ -15,11 +15,11 @@ const currentYear = new Date().getFullYear();
 
 <footer>
   <p>
-    View source at <a href={github}>{repo}</a>
+    Voir le code source sur <a href={github}>{repo}</a>
   </p>
   <p>
     <a href={aboutLink}>{projectName}</a>
-    is licensed under
+    est sous licence
     <a href={licenseLink}>{licenseText}</a>
     - © <a href={authorLink}>{authorName}</a>
     {currentYear}
@@ -29,25 +29,32 @@ const currentYear = new Date().getFullYear();
 <style lang="scss">
   @import '@styles/global.scss';
   footer {
-    margin-top: 1rem;
-    background: var(--primary);
-    color: var(--background);
-    padding: 1rem;
+    margin-top: 3rem;
+    background: rgba(17, 24, 39, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-color-secondary);
+    padding: 1.5rem 2rem;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     flex-wrap: wrap;
-    p, a {
+    backdrop-filter: blur(10px);
+    p {
       margin: 0;
-      color: var(--background);
-      font-size: 1rem;
+      color: var(--text-color-secondary);
+      font-size: 0.9rem;
     }
     a {
-      text-decoration: underline;
+      color: var(--primary-lighter);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
     }
     @include tablet-portrait-down {
       flex-direction: column;
       align-items: center;
+      text-align: center;
     }
   }
 </style>
