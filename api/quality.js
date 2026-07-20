@@ -5,9 +5,7 @@ const qualityHandler = async (url, event, context) => {
   const apiKey = process.env.GOOGLE_CLOUD_API_KEY;
 
   if (!apiKey) {
-    throw new Error(
-      'Missing Google API. You need to set the `GOOGLE_CLOUD_API_KEY` environment variable'
-    );
+    return { error: 'Missing GOOGLE_CLOUD_API_KEY environment variable' };
   }
 
   const endpoint = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?`

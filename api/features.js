@@ -9,7 +9,7 @@ const featuresHandler = async (url) => {
   }
 
   if (!apiKey) {
-    throw new Error('Missing BuiltWith API key in environment variables');
+    return { error: 'Missing BUILT_WITH_API_KEY environment variable' };
   }
 
   const apiUrl = `https://api.builtwith.com/free1/api.json?KEY=${apiKey}&LOOKUP=${encodeURIComponent(url)}`;
